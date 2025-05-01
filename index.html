@@ -19,7 +19,7 @@
 			email: this.email.value,
 			message: this.message.value
 		};
-		fetch("https://script.google.com/macros/s/AKfycbwKdxk37hPb0-j_R98c-wUGjr2yCQIt8_teI0aXi1n336Hts0F9uZdEKVx6Whfu7Iho/exec", {
+		fetch("https://corsproxy.io/?" + encodeURIComponent("https://script.google.com/macros/s/AKfycbwKdxk37hPb0-j_R98c-wUGjr2yCQIt8_teI0aXi1n336Hts0F9uZdEKVx6Whfu7Iho/exec"), {
 			method: "POST",
 			body: JSON.stringify(data),
 			headers: { "Content-Type": "application/json" }
