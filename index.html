@@ -4,5 +4,29 @@
     </head>
     <body>
         <div align="center">Hello World!</div>
+		<form id="myForm">
+		<input name="name" required />
+		<input name="email" required />
+		<textarea name="message"></textarea>
+		<button type="submit">Send</button>
+		</form>
+
+		<script>
+		document.getElementById("myForm").addEventListener("submit", function(e) {
+		e.preventDefault();
+		const data = {
+			name: this.name.value,
+			email: this.email.value,
+			message: this.message.value
+		};
+		fetch("YOUR_WEB_APP_URL_HERE", {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: { "Content-Type": "application/json" }
+		})
+		.then(res => res.text())
+		.then(msg => alert("Submitted: " + msg));
+		});
+		</script>
     </body>
 </html>
